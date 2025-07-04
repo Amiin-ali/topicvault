@@ -47,7 +47,7 @@ const UserDashboard = () => {
 
   const fetchTitles = async () => {
     try {
-      const response = await fetch("http://localhost:5000/api/user/titles")
+      const response = await fetch("https://topicvault.onrender.com/api/user/titles")
       const data = await response.json()
       setTitles(Array.isArray(data) ? data.map((item) => item.title || item) : [])
     } catch (error) {
@@ -58,7 +58,7 @@ const UserDashboard = () => {
 
   const fetchAllTopics = async () => {
     try {
-      const response = await fetch("http://localhost:5000/api/admin/topics")
+      const response = await fetch("https://topicvault.onrender.com/api/admin/topics")
       const data = await response.json()
       setAllTopics(Array.isArray(data) ? data : [])
     } catch (error) {
@@ -69,7 +69,7 @@ const UserDashboard = () => {
 
   const fetchPanels = async () => {
     try {
-      const response = await fetch("http://localhost:5000/api/admin/panels")
+      const response = await fetch("https://topicvault.onrender.com/api/admin/panels")
       const data = await response.json()
       setPanels(Array.isArray(data) ? data : [])
     } catch (error) {
@@ -81,7 +81,7 @@ const UserDashboard = () => {
   const fetchCriteriaTemplate = async (type) => {
     try {
       console.log(`Fetching criteria template for type: ${type}`)
-      const response = await fetch(`http://localhost:5000/api/user/criteria-template/${type}`)
+      const response = await fetch(`https://topicvault.onrender.com/api/user/criteria-template/${type}`)
       console.log(`Response status: ${response.status}`)
 
       if (response.ok) {
@@ -184,7 +184,7 @@ const UserDashboard = () => {
         })),
       }
 
-      const response = await fetch("http://localhost:5000/api/user/evaluations", {
+      const response = await fetch("https://topicvault.onrender.com/api/user/evaluations", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

@@ -157,7 +157,7 @@ const AdminDashboard = () => {
 
   const fetchTopics = async () => {
     try {
-      const response = await fetch("http://localhost:5000/api/admin/topics")
+      const response = await fetch("https://topicvault.onrender.com/api/admin/topics")
       const data = await response.json()
       setTopics(Array.isArray(data) ? data : [])
     } catch (error) {
@@ -168,7 +168,7 @@ const AdminDashboard = () => {
 
   const fetchPanels = async () => {
     try {
-      const response = await fetch("http://localhost:5000/api/admin/panels")
+      const response = await fetch("https://topicvault.onrender.com/api/admin/panels")
       const data = await response.json()
       setPanels(Array.isArray(data) ? data : [])
     } catch (error) {
@@ -179,7 +179,7 @@ const AdminDashboard = () => {
 
   const fetchEvaluations = async () => {
     try {
-      const response = await fetch("http://localhost:5000/api/admin/evaluations-report")
+      const response = await fetch("https://topicvault.onrender.com/api/admin/evaluations-report")
       const data = await response.json()
       console.log("Fetched evaluations:", data)
       setEvaluations(Array.isArray(data) ? data : [])
@@ -191,7 +191,7 @@ const AdminDashboard = () => {
 
   const fetchIndividualEvaluations = async () => {
     try {
-      const response = await fetch("http://localhost:5000/api/admin/evaluations")
+      const response = await fetch("https://topicvault.onrender.com/api/admin/evaluations")
       const data = await response.json()
       setIndividualEvaluations(Array.isArray(data) ? data : [])
     } catch (error) {
@@ -202,7 +202,7 @@ const AdminDashboard = () => {
 
   const fetchCriteriaTemplates = async () => {
     try {
-      const response = await fetch("http://localhost:5000/api/admin/criteria-templates")
+      const response = await fetch("https://topicvault.onrender.com/api/admin/criteria-templates")
       const data = await response.json()
       setCriteriaTemplates(Array.isArray(data) ? data : [])
     } catch (error) {
@@ -220,7 +220,7 @@ const AdminDashboard = () => {
 
     setUploading(true)
     try {
-      const response = await fetch("http://localhost:5000/api/admin/upload-excel", {
+      const response = await fetch("https://topicvault.onrender.com/api/admin/upload-excel", {
         method: "POST",
         body: formData,
       })
@@ -282,7 +282,7 @@ const AdminDashboard = () => {
   const handleCreatePanel = async (e) => {
     e.preventDefault()
     try {
-      const response = await fetch("http://localhost:5000/api/admin/panels", {
+      const response = await fetch("https://topicvault.onrender.com/api/admin/panels", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -308,7 +308,7 @@ const AdminDashboard = () => {
   const handleEditPanel = async (e) => {
     e.preventDefault()
     try {
-      const response = await fetch(`http://localhost:5000/api/admin/panels/${editingPanel._id}`, {
+      const response = await fetch(`https://topicvault.onrender.com/api/admin/panels/${editingPanel._id}`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -336,7 +336,7 @@ const AdminDashboard = () => {
     if (!confirm("Are you sure you want to delete this panel?")) return
 
     try {
-      const response = await fetch(`http://localhost:5000/api/admin/panels/${id}`, {
+      const response = await fetch(`https://topicvault.onrender.com/api/admin/panels/${id}`, {
         method: "DELETE",
       })
 
@@ -355,7 +355,7 @@ const AdminDashboard = () => {
   const handleCreateTopic = async (e) => {
     e.preventDefault()
     try {
-      const response = await fetch("http://localhost:5000/api/admin/topics", {
+      const response = await fetch("https://topicvault.onrender.com/api/admin/topics", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(topicForm),
@@ -384,7 +384,7 @@ const AdminDashboard = () => {
   const handleEditTopic = async (e) => {
     e.preventDefault()
     try {
-      const response = await fetch(`http://localhost:5000/api/admin/topics/${editingTopic._id}`, {
+      const response = await fetch(`https://topicvault.onrender.com/api/admin/topics/${editingTopic._id}`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(topicForm),
@@ -415,7 +415,7 @@ const AdminDashboard = () => {
     if (!confirm("Are you sure you want to delete this topic?")) return
 
     try {
-      const response = await fetch(`http://localhost:5000/api/admin/topics/${id}`, {
+      const response = await fetch(`https://topicvault.onrender.com/api/admin/topics/${id}`, {
         method: "DELETE",
       })
 
@@ -435,7 +435,7 @@ const AdminDashboard = () => {
     if (!confirm("Are you sure you want to delete this evaluation?")) return
 
     try {
-      const response = await fetch(`http://localhost:5000/api/admin/evaluations/${id}`, {
+      const response = await fetch(`https://topicvault.onrender.com/api/admin/evaluations/${id}`, {
         method: "DELETE",
       })
 
@@ -461,7 +461,7 @@ const AdminDashboard = () => {
         return
       }
 
-      const response = await fetch("http://localhost:5000/api/admin/criteria-templates", {
+      const response = await fetch("https://topicvault.onrender.com/api/admin/criteria-templates", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -488,7 +488,7 @@ const AdminDashboard = () => {
     if (!confirm("Are you sure you want to delete this criteria template?")) return
 
     try {
-      const response = await fetch(`http://localhost:5000/api/admin/criteria-templates/${id}`, {
+      const response = await fetch(`https://topicvault.onrender.com/api/admin/criteria-templates/${id}`, {
         method: "DELETE",
       })
 
@@ -605,7 +605,7 @@ const AdminDashboard = () => {
               password: settingsForm.evaluatorPassword,
             }
 
-      const response = await fetch(`http://localhost:5000${endpoint}`, {
+      const response = await fetch(`https://topicvault.onrender.com${endpoint}`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data),
