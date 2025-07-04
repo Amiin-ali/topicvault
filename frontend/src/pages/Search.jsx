@@ -182,12 +182,12 @@ const Search = () => {
               {loading ? (
                 <div className="flex items-center justify-center">
                   <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white mr-2"></div>
-                  Validating & Searching... | Xaqiijin iyo Baadhis...
+                  Validating & Searching...
                 </div>
               ) : (
                 <div className="flex items-center justify-center">
                   <SearchIcon className="mr-2" size={20} />
-                  Search Research Topics | Baadhis Mawduucyada Cilmi-baarista
+                  Search Research Topics 
                 </div>
               )}
             </button>
