@@ -306,7 +306,7 @@ It provides students with a strong foundation in programming, networking, and em
             {/* second video */}
            <div className="group relative">
               <div className="relative bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-lg border border-gray-200 dark:border-gray-700">
-               <iframe width="656" height="369" src="https://www.youtube.com/embed/Fhq4pCx2wTM" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+              <iframe width="656" height="365" src="https://www.youtube.com/embed/Fhq4pCx2wTM" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                 <div className="absolute bottom-6 left-6 text-white">
                   <div className="flex items-center space-x-2 mb-2">
                     <Crown className="text-green-400" size={20} />
